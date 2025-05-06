@@ -1,4 +1,5 @@
 # San Francisco Mobile Food Facilities API
+### Eileen Zhang - May 2025
 
 ## Description
 This project provides a RESTful API for searching and finding mobile food facilities (food trucks) in San Francisco. The API allows users to search for food trucks by name, address, and find the nearest food trucks to a given location. The implementation uses real-time data from the San Francisco OpenData API and provides accurate distance calculations using the Google Maps Distance Matrix API.
