@@ -153,7 +153,15 @@ uvicorn main:app --reload
 The API will be available at `http://localhost:8000`
 API documentation is available at `http://localhost:8000/docs`
 
-## Running Tests
+6. BONUS: Run the frontend:
+```bash
+cd frontend
+npm install # install dependencies
+npm run dev # run the frontend
+```
+Frontend is available at `http://localhost:3000`
+
+## Running Tests (Backend only)
 ```bash
 pytest
 ```
