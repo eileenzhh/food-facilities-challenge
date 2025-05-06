@@ -64,6 +64,10 @@ If I had more time, I would add these features to create a more user-friendly an
    - Implement scheduled data updates from SF OpenData
    - Add data validation and cleaning pipeline
 
+4. **Frontend**
+   - Incorporate a map element using GoogleMaps API
+   - Provide descriptions of food 
+
 ### Trade-offs Made
 1. **SQLite vs. PostgreSQL**
    - Chose SQLite for simplicity and given the tasks, SQLite was sufficient, also zero-configuration needed
@@ -89,35 +93,35 @@ If I had more time, I would add these features to create a more user-friendly an
 
 2. **Search Features**
    - Advanced search filters
-   - Search by food type
-   - Search by operating hours
+   - Search by food type, operating hours, price range etc.
    - Search within nearest XX miles
    - Food Truck information after searching 
 
 3. **Data Features**
-   - Historical data tracking
-   - Popularity metrics
-   - Operating hours validation
+   - Historical data tracking and popularity metrics
+   - Operating hours validation during search times
+
+4. **User Location Detection**
+   - Instead of inputting coordinates (very unintuitive for users), automatically detect user location
+   - Merge find nearest search to the other two search methods
+   - Order results by nearest, including distance for all search results
+   - Implement user permission for location access
 
 ### Things to consider after scaling
 1. **Database**
-   - Implement connection pooling
-   - Implement proper indexing strategy
+   - Implement connection pooling to reduce latency
+   - Implement proper indexing strategy to speed up query execution
 
 2. **API Performance**
-   - Add request caching
-   - Implement rate limiting
-   - Add request queuing for high-load scenarios
+   - Add request caching to return identical requests without re-calling
+   - Implement rate limiting to prevent server overload
+   - Add request queuing for high-load scenarios to maintain constant service during peak usage
+   - Add input validation to ensure proper usage for each requests (e.g. latitude + longitude between a specific range, double-checking datatypes etc.)
 
 3. **Monitoring and Logging**
-   - Add structured logging
-   - Implement metrics collection
-   - Add performance monitoring
-
-4. **Security**
-   - Add API authentication
-   - Implement request validation
-   - Add rate limiting per user/IP
+   - Add structured logging to keep track of bugs or failed requests or rate limit hits
+   - Implement metrics collection to assess performance and better troubleshooting
+   - Add performance monitoring for system resources
 
 
 ## Setup and Installation
